@@ -60,7 +60,7 @@ Hover over a chart to see exact case counts. Hover over the **i** next to a pane
 Requires Python 3.10 or newer.
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git clone https://github.com/epipandit/atlas-arena-cases-dashboard.git
 cd YOUR-REPO
 pip install -r requirements.txt
 streamlit run app.py
@@ -70,51 +70,5 @@ The app opens at http://localhost:8501.
 
 ---
 
-## Deploy to Streamlit Community Cloud
 
-1. Push this repository to GitHub as a **public** repo. Only public apps can be embedded in other websites.
-2. Sign in at [share.streamlit.io](https://share.streamlit.io) with GitHub.
-3. Click **Create app**, then select this repo, branch `main`, and main file `app.py`.
-4. Choose a custom subdomain. Under **Advanced settings**, pick Python 3.11 or 3.12.
-5. Click **Deploy**.
-
-After that, every push to `main` redeploys the app automatically.
-
-> **Note:** free Community Cloud apps go to sleep after a period without visitors. The first visit afterward wakes the app, which takes about a minute.
-
----
-
-## Embed it in a web page
-
-Add `?embed=true` to the app URL and place it in an iframe. Most Markdown renderers accept raw HTML:
-
-```html
-<iframe
-  src="https://YOUR-SUBDOMAIN.streamlit.app/?embed=true&embed_options=light_theme"
-  title="Infections by New World Arenaviruses dashboard"
-  style="width: 100%; height: 820px; border: 0;"
-  loading="lazy">
-</iframe>
-
-<p><a href="https://YOUR-SUBDOMAIN.streamlit.app/" target="_blank">Open the dashboard in a new tab</a></p>
-```
-
-Keep the "open in a new tab" link. If the app is asleep, the embed may not wake it, but opening the app directly will.
-
----
-
-## Customizing
-
-- **Fit to screen or iframe:** change `CHART_H` near the top of `app.py`. Lower it if the bottom row is cut off; raise it for large screens or taller iframes.
-- **Colors:** the AtlasArena palette is defined in the `BLUE`, `SECONDARY` and `GRAY` dictionaries in `app.py` and in `.streamlit/config.toml`.
-- **Logo:** replace `AALogo.svg`, or add an `AALogo.png`, which takes priority.
-- **Data:** edit `Arenavirus_2.0.xlsx` and keep the same sheet and column names. Push the change and the app updates.
-
----
-
-## Data sources and credits
-
-- **Case data:** compiled in `Arenavirus_2.0.xlsx`. <!-- TODO: list the sources for the Machupo, Junin and sex-distribution data -->
-- **Guanarito incidence:** reproduced from https://doi.org/10.1086/516299.
-- **Boundaries:** [Natural Earth](https://www.naturalearthdata.com/) Admin-1 states and provinces (public domain), simplified for this app.
 - **Design:** colors and typography follow [AtlasArena](https://atlas-arena.org) ([source](https://github.com/developmentseed/atlasarena), MIT License, © 2024 Development Seed).
